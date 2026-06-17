@@ -21,7 +21,7 @@
   body{
     background:var(--black);
     color:var(--white);
-    font-family:'Open Sans',system-ui,sans-serif;
+    font-family:'Open Sans',system-ui,Arial,sans-serif;
     min-height:100%;
     display:flex;flex-direction:column;
     -webkit-font-smoothing:antialiased;
@@ -34,7 +34,6 @@
   .swatches{display:flex;gap:8px;align-items:center}
   .sw{width:16px;height:16px;border-radius:3px;border:1px solid #2a2a2a}
   .sw.l{background:var(--lime)} .sw.b{background:#000} .sw.w{background:#fff}
-  .swlbl{font-size:10px;color:var(--muted);letter-spacing:.1em;margin-left:6px}
   .tabs{display:flex;gap:6px;padding:18px 28px 0;justify-content:center}
   .tab{
     background:transparent;border:0;color:var(--muted);
@@ -44,55 +43,50 @@
   }
   .tab:hover{color:#cfcfcf}
   .tab.active{color:var(--white);border-bottom-color:var(--lime)}
-  main{flex:1;display:flex;flex-direction:column;align-items:center;padding:40px 24px 64px}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;padding:44px 24px 64px}
   .panel{display:none;width:100%;animation:fade .35s ease}
   .panel.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  /* TAB 1 — grid 2x6 de lockups (logo + slogan) */
+  /* TAB 1 — grid de finalistas (logo + slogan) */
   .grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:18px;
-    width:100%;max-width:1040px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:22px;
+    width:100%;max-width:1060px;margin:0 auto;
   }
   .cell{
     background:var(--surface);border:1px solid var(--line);border-radius:14px;
-    padding:30px 30px 26px;display:flex;flex-direction:column;align-items:center;
+    padding:40px 34px 38px;display:flex;flex-direction:column;align-items:center;
     transition:.18s;
   }
   .cell:hover{border-color:#2f2f2f}
-  .cell .logo{width:62%;max-width:240px;display:block;margin-bottom:18px}
-  /* slogan esticado para a largura da logo */
-  .lockslot{width:62%;max-width:240px}
-  .slg{width:100%;display:block}
-  .slg text{font-family:'Open Sans',sans-serif;font-weight:800;fill:var(--white)}
-  .cell.ze{border-color:#3a4a07;background:#0e1102}
-  .cell.ze .slg text{fill:var(--lime)}
-  .zebadge{
-    color:var(--lime);font-size:9px;font-weight:800;letter-spacing:.22em;
-    text-transform:uppercase;margin-bottom:14px;
+  .cell .logo{width:210px;max-width:62%;display:block;margin-bottom:26px}
+  .slogan{
+    font-family:'Open Sans',Arial,sans-serif;font-weight:800;
+    font-size:clamp(20px,2vw,27px);line-height:1.12;letter-spacing:.01em;
+    text-transform:uppercase;text-align:center;color:var(--white);
+    max-width:330px;
   }
-  .cell .zespace{height:0}
+  /* finalista 5 sozinha: centraliza na ultima linha */
+  .cell:last-child{grid-column:1 / -1;justify-self:center;width:calc(50% - 11px)}
 
-  /* TAB 2 — lista sem logo */
+  /* TAB 2 — mais opcoes, sem logo */
   .panel-title{
     text-align:center;color:var(--muted);font-size:11px;font-weight:700;
-    letter-spacing:.28em;text-transform:uppercase;margin-bottom:30px;
+    letter-spacing:.28em;text-transform:uppercase;margin-bottom:34px;
   }
-  .stage{width:clamp(320px,76vw,720px);margin:0 auto}
-  .more .slg text{font-weight:700;fill:var(--white)}
-  .more .slg{margin:0 auto}
-  .more .slg + .slg{margin-top:8px}
-  .more .slg:hover text{fill:var(--lime)}
+  .list{display:flex;flex-direction:column;align-items:center;gap:20px;max-width:760px;margin:0 auto}
+  .list .slogan{font-size:clamp(20px,2.4vw,30px);font-weight:700;max-width:none;transition:color .15s}
+  .list .slogan:hover{color:var(--lime)}
 
   footer{
     padding:18px 28px;border-top:1px solid var(--line);
     color:#5a5a5a;font-size:11px;letter-spacing:.06em;text-align:center;margin-top:auto;
   }
-  footer b{color:var(--lime);font-weight:800}
 
-  @media (max-width:600px){
+  @media (max-width:620px){
     .grid{grid-template-columns:1fr}
-    .cell .logo,.lockslot{width:78%}
+    .cell:last-child{grid-column:auto;width:auto}
+    .cell .logo{max-width:74%}
   }
 </style>
 </head>
@@ -111,87 +105,50 @@
   </div>
 
   <main>
-    <!-- TAB 1: grid 2x6, logo + slogan em cada cell -->
+    <!-- TAB 1: grid so com finalistas -->
     <section class="panel active" id="finalistas">
       <div class="grid">
-
         <div class="cell">
           <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">O MELHOR PARA SUA CORRIDA</text></svg></div>
+          <div class="slogan">O melhor para sua corrida</div>
         </div>
-
         <div class="cell">
           <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">SUA CORRIDA MERECE O MELHOR</text></svg></div>
+          <div class="slogan">Sua corrida merece o melhor</div>
         </div>
-
         <div class="cell">
           <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">CORRA MAIS RÁPIDO</text></svg></div>
+          <div class="slogan">Corra mais rápido</div>
         </div>
-
         <div class="cell">
           <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">BEST NO PÉ, CHIQUE NO PASSO</text></svg></div>
+          <div class="slogan">Best no pé, chique no passo</div>
         </div>
-
         <div class="cell">
           <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">ENERGIA EM CADA PASSADA</text></svg></div>
+          <div class="slogan">Energia em cada passada</div>
         </div>
-
-        <div class="cell">
-          <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">O MELHOR CALÇA PRIMEIRO</text></svg></div>
-        </div>
-
-        <div class="cell">
-          <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">CORRA COM O MELHOR</text></svg></div>
-        </div>
-
-        <div class="cell">
-          <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">PERFORMANCE COM ESTILO</text></svg></div>
-        </div>
-
-        <div class="cell">
-          <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">ONDE CORRIDA VIRA ESTILO</text></svg></div>
-        </div>
-
-        <div class="cell">
-          <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">SEJA VISTO, SEJA RÁPIDO</text></svg></div>
-        </div>
-
-        <div class="cell">
-          <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">A ENERGIA COMEÇA NO PÉ</text></svg></div>
-        </div>
-
-        <div class="cell">
-          <img class="logo" src="logo.png" alt="CHIQUE B">
-          <div class="lockslot"><svg class="slg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet"><text x="500" y="86" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">FEITO PRA DISPARAR</text></svg></div>
-        </div>
-
       </div>
     </section>
 
-    <!-- TAB 2: mais opções, sem logo -->
-    <section class="panel more" id="mais">
+    <!-- TAB 2: mais opcoes, sem logo -->
+    <section class="panel" id="mais">
       <div class="panel-title">Mais opções de slogan</div>
-      <div class="stage">
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">VELOCIDADE VESTIDA</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">MAIS RÁPIDO A CADA PASSADA</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">VISTA A VELOCIDADE</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">CORRA CHIQUE</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">PISA FORTE</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">ACELERA</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">A MELHOR LOJA DE TÊNIS DO BRASIL</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">RUN THE BEST</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">BUILT TO RUN</text></svg>
-        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">YOUR BEST RUN STARTS HERE</text></svg>
+      <div class="list">
+        <div class="slogan">O melhor calça primeiro</div>
+        <div class="slogan">Corra com o melhor</div>
+        <div class="slogan">Performance com estilo</div>
+        <div class="slogan">Onde corrida vira estilo</div>
+        <div class="slogan">Seja visto, seja rápido</div>
+        <div class="slogan">A energia começa no pé</div>
+        <div class="slogan">Feito pra disparar</div>
+        <div class="slogan">Velocidade vestida</div>
+        <div class="slogan">Vista a velocidade</div>
+        <div class="slogan">Corra Chique</div>
+        <div class="slogan">A melhor loja de tênis do Brasil</div>
+        <div class="slogan">Run the best</div>
+        <div class="slogan">Built to run</div>
+        <div class="slogan">Your best run starts here</div>
       </div>
     </section>
   </main>
