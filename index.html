@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHIQUE B — Slogans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#d8fe0d;
+    --black:#000000;
+    --white:#ffffff;
+    --surface:#0b0b0b;
+    --line:#1c1c1c;
+    --muted:#8a8a8a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Archivo',system-ui,sans-serif;
+    min-height:100%;
+    display:flex;flex-direction:column;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* topbar */
+  .top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 28px;border-bottom:1px solid var(--line);
+  }
+  .brandtag{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .swatches{display:flex;gap:8px;align-items:center}
+  .sw{width:16px;height:16px;border-radius:3px;border:1px solid #2a2a2a}
+  .sw.l{background:var(--lime)} .sw.b{background:#000} .sw.w{background:#fff}
+  .swlbl{font-size:10px;color:var(--muted);letter-spacing:.1em;margin-left:6px}
+  /* tabs */
+  .tabs{display:flex;gap:6px;padding:18px 28px 0;justify-content:center}
+  .tab{
+    background:transparent;border:0;color:var(--muted);
+    font-family:inherit;font-weight:800;font-size:13px;letter-spacing:.08em;
+    text-transform:uppercase;padding:10px 18px;cursor:pointer;
+    border-bottom:2px solid transparent;transition:.15s;
+  }
+  .tab:hover{color:#cfcfcf}
+  .tab.active{color:var(--white);border-bottom-color:var(--lime)}
+  /* stage */
+  main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px 64px}
+  .panel{display:none;width:100%;animation:fade .35s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .stage{width:clamp(320px,78vw,640px);margin:0 auto}
+  .logo{width:100%;display:block;margin-bottom:34px}
+  .logo path{fill:var(--white)}
+  /* slogan stretched to logo width via SVG textLength */
+  .slg{width:100%;display:block;margin:0 auto}
+  .slg + .slg{margin-top:10px}
+  .slg text{
+    font-family:'Archivo',sans-serif;font-weight:800;font-style:italic;
+    font-size:62px;fill:var(--white);
+  }
+  .slg.ze text{fill:var(--lime)}
+  .zerow{position:relative}
+  .zebadge{
+    text-align:center;color:var(--lime);font-size:10px;font-weight:800;
+    letter-spacing:.22em;text-transform:uppercase;margin:14px 0 2px;
+  }
+  .divider{height:1px;background:var(--line);max-width:640px;margin:30px auto 0;width:78vw}
+  .panel-title{
+    text-align:center;color:var(--muted);font-size:11px;font-weight:700;
+    letter-spacing:.28em;text-transform:uppercase;margin-bottom:30px;
+  }
+  /* tab2 list */
+  .more .stage{width:clamp(320px,78vw,720px)}
+  .more .slg + .slg{margin-top:6px}
+  .more .slg text{font-size:54px;font-weight:700}
+  .more .slg:hover text{fill:var(--lime)}
+  footer{
+    padding:18px 28px;border-top:1px solid var(--line);
+    color:#5a5a5a;font-size:11px;letter-spacing:.06em;text-align:center;
+  }
+  footer b{color:var(--lime);font-weight:800}
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <div class="brandtag">Chique B · Identidade</div>
+    <div class="swatches">
+      <span class="sw l"></span><span class="sw b"></span><span class="sw w"></span>
+      <span class="swlbl">#D8FE0D · #000000 · #FFFFFF</span>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="finalistas">Finalistas</button>
+    <button class="tab" data-tab="mais">Mais opções</button>
+  </div>
+
+  <main>
+    <!-- TAB 1: logo + 5 finalistas -->
+    <section class="panel active" id="finalistas">
+      <div class="stage">
+        <!-- wordmark CHIQUE B (branco) -->
+        <svg class="logo" viewBox="0 0 559.62 83.21" xmlns="http://www.w3.org/2000/svg" aria-label="CHIQUE B">
+          <path d="M270.98,83.21l-7.54-8.13c-9.81,3.06-20.16,3.68-30.32,1.95-15.6-2.81-27.9-12.95-29.09-29.24-.96-13.12,4.32-25.83,14.06-34.69C228.24,3.88,241.44,0,255.1,0c5.75,0,11.21.62,16.67,2.32,16.96,5.3,25.75,18.99,23.23,36.7-1.89,13.28-9.82,24.72-21.57,31.57l11.37,12.57-13.83.05ZM247.73,57.88l2.01-13.1,13.71,14.88c9.68-5.8,14.7-16.71,13.66-27.59-.74-7.69-5.59-13.81-12.87-16.47-4.54-1.66-9.23-2.08-14.15-1.71-7.75.59-15.01,3.6-20.32,9.27-5.99,6.4-8.74,15.12-7.48,23.77.71,4.87,3.11,9.09,6.91,12.11,6.41,5.09,15.63,6.02,23.73,4.5l-5.19-5.66Z"/>
+          <polygon points="455.31 45 406.43 45 403.82 63.53 458.97 63.53 457.16 76.95 384.67 76.93 395.32 1.03 467.78 1.02 465.93 14.44 410.78 14.44 408.16 32.93 457.02 32.92 455.31 45"/>
+          <polygon points="162.98 76.91 145.78 76.96 150.24 45.8 101.26 45.8 96.93 76.94 79.73 76.94 90.38 1.03 107.57 1.02 103.25 32.15 152.1 32.16 156.43 1.02 173.63 1.03 162.98 76.91"/>
+          <path d="M385.83,1.03l-6.03,43.05c-1.54,10.4-7.1,19.43-15.69,25.47-10.17,7.16-22.96,9.45-35.25,8.03-5.1-.59-9.86-1.97-14.3-4.4-11.64-6.38-15.5-18.29-13.36-31.14l5.75-41.02h17.52s-6.07,43.44-6.07,43.44c-1.01,8.26,2.54,15.47,10.49,18.15,6.5,2.19,13.67,1.82,19.99-.88,7.14-3.05,11.82-9.22,13.31-16.84l6.14-43.87h17.52Z"/>
+          <path d="M61.66,62.04c5.12-1.6,9.52-3.8,13.74-7.02l-2.18,15.4c-3.92,2.44-7.9,4.07-12.26,5.27-6.2,1.69-12.37,2.35-18.84,2.27-11.3-.14-23.24-2.62-31.87-10.08C5.08,63.41,1.66,57.52.54,50.72-1.73,37,3.29,23.23,13.56,13.9,24.33,4.11,38.74.08,53.2,0c9.69-.05,21.2,1.64,28.94,7.57l-2.18,15.31c-3.8-3.59-7.89-5.76-12.67-7.22-7.99-2.3-16.3-2.62-24.48-1.03-14.73,3.03-26.09,13.83-25.4,29.29.52,11.75,9.85,18.17,21,19.83,7.8,1.16,15.54.53,23.23-1.72Z"/>
+          <polygon points="191.08 76.96 173.78 76.93 184.43 1.02 201.73 1.03 191.08 76.96"/>
+          <polygon points="514.69 43.22 504.6 76.76 478.25 76.99 483.13 43.49 514.69 43.22"/>
+          <polygon points="525.96 .15 483.49 41.06 489.4 .46 525.96 .15"/>
+          <path d="M556.68,52.46c-.22,13.18-11.51,23.96-25.22,24.08l-26.06.22,40.02-44.39c6.9,4.16,11.4,11.58,11.26,20.09Z"/>
+          <path d="M559.61,16.05c-.14,8.11-6.42,14.88-14.5,16.13.1.06.2.12.3.18l-25.65.22L529.71.12,543.12,0c9.26-.08,16.64,7.11,16.5,16.05Z"/>
+        </svg>
+
+        <div class="zebadge">Sugestão do Zé</div>
+        <svg class="slg ze" viewBox="0 0 1000 96" preserveAspectRatio="xMidYMid meet"><text x="500" y="74" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">O MELHOR PARA SUA CORRIDA</text></svg>
+
+        <svg class="slg" viewBox="0 0 1000 96" preserveAspectRatio="xMidYMid meet"><text x="500" y="74" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">SUA CORRIDA MERECE O MELHOR</text></svg>
+        <svg class="slg" viewBox="0 0 1000 96" preserveAspectRatio="xMidYMid meet"><text x="500" y="74" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">CORRA MAIS RÁPIDO</text></svg>
+        <svg class="slg" viewBox="0 0 1000 96" preserveAspectRatio="xMidYMid meet"><text x="500" y="74" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">BEST NO PÉ, CHIQUE NO PASSO</text></svg>
+        <svg class="slg" viewBox="0 0 1000 96" preserveAspectRatio="xMidYMid meet"><text x="500" y="74" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">ENERGIA EM CADA PASSADA</text></svg>
+      </div>
+    </section>
+
+    <!-- TAB 2: mais opções, sem logo -->
+    <section class="panel more" id="mais">
+      <div class="panel-title">Mais opções de slogan</div>
+      <div class="stage">
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">O MELHOR CALÇA PRIMEIRO</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">CORRA COM O MELHOR</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">VELOCIDADE VESTIDA</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">A ENERGIA COMEÇA NO PÉ</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">MAIS RÁPIDO A CADA PASSADA</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">FEITO PRA DISPARAR</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">PERFORMANCE COM ESTILO</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">ONDE CORRIDA VIRA ESTILO</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">SEJA VISTO, SEJA RÁPIDO</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">VISTA A VELOCIDADE</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">CORRA CHIQUE</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">RUN THE BEST</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">BUILT TO RUN</text></svg>
+        <svg class="slg" viewBox="0 0 1000 90" preserveAspectRatio="xMidYMid meet"><text x="500" y="68" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">YOUR BEST RUN STARTS HERE</text></svg>
+      </div>
+    </section>
+  </main>
+
+  <footer>CHIQUE B &nbsp;·&nbsp; estudo de slogan &nbsp;·&nbsp; <b>#D8FE0D</b> / #000000 / #FFFFFF</footer>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active')});
+      document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
